@@ -16,6 +16,9 @@ img {
 @media (min-width: 992px) {
     img {
         max-width: 60%; /* Further reduce the size on larger screens */
+        max-height: 60%;
         margin: 0 auto; /* Center the image horizontally */
+        margin-top: -10%;
+        margin-bottom: -20%;
     }
 }
