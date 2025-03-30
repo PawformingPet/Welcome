@@ -1,0 +1,25 @@
+img {
+    width: 100%;  /* Use full width of the container */
+    height: auto; /* Scale height according to the width while keeping the aspect ratio */
+    display: block; /* Removes default spacing around the image */
+}
+
+/* Example media query for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    img {
+        max-width: 80%; /* Reduce the size on tablets if necessary */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+}
+
+/* Example media query for desktops */
+@media (min-width: 992px) {
+    
+    img {
+        max-width: 55%; /* Further reduce the size on larger screens */
+        max-height: 60%;
+        margin: 0 auto; /* Center the image horizontally */
+        margin-top: -10%;
+        margin-bottom: -20%;
+    }
+}

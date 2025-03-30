@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawforming Pet - Healthy Pet Food</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        .top-banner {
+            background-color: #7AA77C;
+            padding: 15px;
+            text-align: center;
+            color: #000;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            z-index: 20;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            color: #2A6030;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: cursive, sans-serif;
+        }
+        
+        .main-heading {
+            font-size: 36px;
+            max-width: calc(100% - 20%);
+            margin: 0 auto 30px;
+            line-height: 1.4;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #2A6030;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .paw-print {
+            position: absolute;
+            width: clamp(60px, 10vw, 120px); /* Responsive width */
+        }
+        
+        .paw-print-1 {
+            top: clamp(5px, 2vh, 15px);
+            right: clamp(3%, 10%, 20%);
+        }
+        
+        .paw-print-2 {
+            bottom: clamp(10%, 20%, 25%);
+            left: clamp(-10%, -5%, 5%);
+            transform: rotate(25deg);
+        }
+        
+        .food-image-top-left {
+            position: absolute;
+            top: -40px; 
+            left: -50px;
+            max-width: 150px;
+            z-index: 5;
+            transform: rotate(15deg);
+        }
+        
+        .food-image-top-right {
+            position: absolute;
+            top: -40px;
+            right: -50px;
+            max-width: 150px;
+            transform: rotate(15deg);
+        }
+        
+        .leafy-left {
+            position: absolute;
+            bottom: 0;
+            left: -40px;
+            max-width: 150px;
+        }
+        
+        .leafy-right {
+            position: absolute;
+            bottom: 0;
+            right: -40px;
+            max-width: 150px;
+        }
+        .logo-holder{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background-color:#f9f9f9
+        }
+        .brand-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-color: #FFF8E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-circle img {
+            width: 80%;
+        }
+        
+        .ingredient-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            /* max-width: 800px; */
+            margin: 0 5;
+            margin-top: -70px;
+            background-color: #f9f9f9;
+        }
+        .ingredient-item1{
+            width: 35%;
+            min-width: 80px;
+            max-width: 300px; 
+            text-align: left;
+        }
+        .ingredient-item2 {
+            width: 35%;
+            min-width: 80px;
+            max-width: 300px;
+            text-align: right;
+        }
+
+        .ingredient-item1 img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .ingredient-item2 img {
+            width: 100%;
+            border-radius: 10px;
+        }
+      
+        
+        .info-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 20px;
+            background-color: #7AA77C;
+        }
+        
+        .info-text {
+            flex: 3;
+            padding: 20px;
+        }
+        
+        .info-image {
+            width: 10%;
+            flex: 2;
+            text-align: center;
+        }
+        
+        .info-image img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+        
+        .section-title {
+            /* Remove the solid background color so the brush stroke shows */
+            background-color: transparent; 
+            
+            /* Set the brush stroke image as the background */
+            background: url("Img/SP-title-BG.png") no-repeat center center; 
+            background-size: 100% 100%;  /* Make background size responsive */
+            font-family: cursive, sans-serif;
+            /* Increase padding so the title text fits within the brush stroke */
+            padding: 10px 8%;
+            font-size: clamp(16px, 4vw, 20px); /* Responsive font size */
+            margin-bottom: 20px;
+            display: inline-block;
+            color: #000; 
+            text-align: center;
+            width: auto;
+            max-width: 90%;
+        }
+
+        
+        .section-content {
+            font-size: clamp(10px,3vw, 30px);
+            line-height: clamp(1, 2vw, 2);
+            max-width: calc(100% - 20%);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .main-heading {
+                font-size: 28px;
+            }
+            
+            .food-image-top-left,
+            .food-image-top-right,
+            .leafy-left,
+            .leafy-right {
+                max-width: 100px;
+            }
+            .main-heading{
+                margin: 0 auto 30px;
+                padding: 0 40px;
+                line-height: 1.4;
+            }
+            
+            .info-section {
+                flex-direction: column;
+            }
+            
+            .info-image {
+                margin-top: 20px;
+            }
+            
+            .ingredient-item {
+                width: 30%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .top-banner {
+                font-size: 18px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+            
+            .main-heading {
+                font-size: 20px;
+            }
+            
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            
+            .food-image-top-left,
+            .food-image-top-right,
+            .leafy-left,
+            .leafy-right {
+                max-width: 80px;
+            }
+            
+            .brand-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .ingredient-item {
+                width: 45%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Top banner -->
+    <div class="top-banner">
+        Order now to enjoy 20% off
+    </div>
+    
+    <!-- Header section -->
+    <div class="header">
+        <!-- Decorative elements -->
+        <img src="Img\Beef-Raw.png" alt="Meat" class="food-image-top-left">
+        <img src="Img\CB-Raw.png" alt="Chicken" class="food-image-top-right">
+        <img src="Img\Leaf-Left.png" alt="Leafy Greens" class="leafy-left">
+        <img src="Img\Leaf-right.png" alt="Leafy Greens" class="leafy-right">
+        
+        <!-- Paw prints -->
+        <img src="Img\Paws.png" alt="Paw Print" class="paw-print paw-print-1">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Img\Green_Paw.png" alt="Paw">
+            <div class="logo-text">Pawforming Pet</div>
+        </div>
+        
+        <!-- Main heading -->
+        <h1 class="main-heading">Delight in Every Bite—Make a Better Health Decision for Your Furry Friend</h1>
+        
+        <!-- CTA button -->
+        <a href="https://pawformingpet.github.io/Welcome/" class="cta-button">See Healthy Options</a>
+    </div>
+    
+    <!-- Brand circle -->
+    <div class="logo-holder">
+        <div class="brand-circle">
+            <img src="Img\Logo.png" alt="Pawforming Logo">
+        </div>
+    </div>
+    <img src="Img\Paws.png" alt="Paw Print" class="paw-print paw-print-2">
+    <!-- Ingredient display (moved this outside the logo-holder) -->
+    <div class="ingredient-display">
+        <div class="ingredient-item1">
+            <img src="Img\Salmon&DB.png" alt="Freeze-Dried Salmon">
+        </div>
+        <div class="ingredient-item2">
+            <img src="Img\Cod&BL.png" alt="Freeze-Dried Beef Liver">
+        </div>
+    </div>
+    
+    <!-- Premium ingredient section -->
+    <div class="info-section"style="flex-direction: row;">
+        <div class="info-text">
+            <h2 class="section-title"style="display: block; margin: 0 auto;">Premium Ingredient</h2>
+            <p class="section-content"style="text-align: left; max-width: 90%; margin: 0 auto;">
+                Pawforming uses human-grade ingredients sourced from reputable 
+                suppliers like Restaurant Depot and Sysco with no additive added.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="Img\SellingP-1.png" alt="Products Mix">
+        </div>
+    </div>
+    
+    <!-- Nutritious section -->
+    <div class="info-section" style="flex-direction: row-reverse;">
+        <div class="info-text" style="text-align: center;">
+            <h2 class="section-title" style="display: block; margin: 0 auto;">Nutritious & Enhanced Health</h2>
+            <p class="section-content" style="text-align: left; max-width: 90%; margin: 0 auto;">
+                Pawforming Treats crafted to retain a higher concentration of essential
+                nutrients through minimized process, with optimized digestibility aids
+                nutrient absorption.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="Img\SellingP-2.png" alt="Freeze-Dried Beef">
+        </div>
+    </div>
+
+    <!-- Pasteurized Safety section -->
+    <div class="info-section"style="flex-direction: row;">
+        <div class="info-text">
+            <h2 class="section-title"style="display: block; margin: 0 auto;">Pasteurized Safety </h2>
+            <p class="section-content"style="text-align: left; max-width: 90%; margin: 0 auto;">
+                Our pasteurization process eliminates harmful pathogens,
+                 ensuring each treat is not only nutritious but also exceptionally safe for 
+                 your pet's consumption.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="Img\SellingP-1.png" alt="Products Mix">
+        </div>
+    </div>
+
+    <!-- Nutritious section -->
+    <div class="info-section" style="flex-direction: row-reverse;">
+        <div class="info-text" style="text-align: center;">
+            <h2 class="section-title" style="display: block; margin: 0 auto;">Delightment Guaranteed</h2>
+            <p class="section-content" style="text-align: left; max-width: 90%; margin: 0 auto;">
+                Pawforming Treats with condenced natural flavors,
+                ensuring your pet will love every bite. Your Pet doesn't like it?
+                We'll refund you 100% of your trial purchase.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="Img\SellingP-2.png" alt="Freeze-Dried Beef">
+        </div>
+    </div>
+</body>
+</html>
